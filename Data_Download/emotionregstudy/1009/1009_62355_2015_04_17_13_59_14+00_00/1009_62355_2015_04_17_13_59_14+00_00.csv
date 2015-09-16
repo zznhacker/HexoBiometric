@@ -1,0 +1,5 @@
+TimeStamp,Athelete,activity,breathingrate,breathingratestatus,cadence,expiration,heartrate,heartratestatus,inspiration,minuteventilation,rrinterval,tidalvolume,
+Fri Apr 17 08:59:15 CDT 2015,1009,0.0,10,15,0,null,70,32,null,0.0,null,0.0,
+Fri Apr 17 08:59:16 CDT 2015,1009,0.0,10,15,0,null,70,32,null,0.0,null,0.0,
+Fri Apr 17 08:59:17 CDT 2015,1009,0.0,10,13,0,null,70,32,13691,0.0,1.0,0.0,
+Fri Apr 17 08:59:18 CDT 2015,1009,0.59375,10,15,0,null,70,40,null,0.0,null,0.0,
