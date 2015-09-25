@@ -54,7 +54,7 @@ public class DownloadAll {
 		}
 		
 		ReadId readling=new ReadId(reco);
-	
+		
 		try {
 			readling.getCredentials(reco);
 		} catch (IOException e1) {
@@ -69,7 +69,12 @@ public class DownloadAll {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+		try {
+			Thread.sleep(125);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		// Downloading breathing_rate data
 		BreathingRate object = new BreathingRate(reco);
 		try {
@@ -78,7 +83,12 @@ public class DownloadAll {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-
+		try {
+			Thread.sleep(125);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		// Downloading breathing_rate_quality data
 		BreathingRateQuality brRateQualityObject = new BreathingRateQuality(reco);
 		try {
@@ -86,6 +96,12 @@ public class DownloadAll {
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		}
+		try {
+			Thread.sleep(125);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
 		}
 		
 		// Downloading cadence data
@@ -96,6 +112,12 @@ public class DownloadAll {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		try {
+			Thread.sleep(125);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		
 		// Downloading expiration data
 		Expiration expObject = new Expiration(reco);
@@ -105,6 +127,12 @@ public class DownloadAll {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		try {
+			Thread.sleep(125);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		
 		// Downloading heart_rate data
 		HeartRate heartObject = new HeartRate(reco);
@@ -113,6 +141,12 @@ public class DownloadAll {
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		}
+		try {
+			Thread.sleep(125);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
 		}
 		
 		// Downloading heart_rate_quality data
@@ -124,6 +158,13 @@ public class DownloadAll {
 			e1.printStackTrace();
 		}
 		
+		try {
+			Thread.sleep(125);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		
 		// Downloading inspiration data
 		Inspiration inspirationObject = new Inspiration(reco);
 		try {
@@ -131,6 +172,13 @@ public class DownloadAll {
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		}
+		
+		try {
+			Thread.sleep(125);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
 		}
 		
 		// Downloading minute_ventilation data
@@ -142,6 +190,13 @@ public class DownloadAll {
 			e1.printStackTrace();
 		}
 		
+		try {
+			Thread.sleep(125);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		
 		// Downloading rr_interval data
 		RRInterval rrObject = new RRInterval(reco);
 		try {
@@ -151,6 +206,13 @@ public class DownloadAll {
 			e1.printStackTrace();
 		}
 		
+		try {
+			Thread.sleep(125);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		
 		TidalVolume tidalObject = new TidalVolume(reco);
 		try {
 			tidalObject.getCredentials(reco);
@@ -158,6 +220,14 @@ public class DownloadAll {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		
+		try {
+			Thread.sleep(125);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		
 		try {
 			all.gatherCsvTogether(reco);
 		} catch (IOException e) {
