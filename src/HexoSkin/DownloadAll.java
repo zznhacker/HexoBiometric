@@ -386,16 +386,17 @@ public class DownloadAll {
 										continue;
 									}
 								}
-								if((tempRecord[0].compareTo("TimeStamp")!=0)&&(TimeStamps[0].compareTo("TimeStamp")!=0))
+								if(tempRecord[1].compareTo("Value")==0)
+								{
+									writerSum.append(PARAMETER[index]	+	"");
+								}
+								else if((tempRecord[0].compareTo("TimeStamp")!=0)&&(TimeStamps[0].compareTo("TimeStamp")!=0))
 								{
 									SimpleDateFormat sfStart1 = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy",java.util.Locale.ENGLISH) ;
 									Date dateFinal=sfStart1.parse(tempRecord[0]);
 									Date dateInitial=sfStart1.parse(TimeStamps[whileLoop]);
-									if(tempRecord[1].compareTo("Value")==0)
-									{
-										writerSum.append(PARAMETER[index]	+	"");
-									}
-									else if(tempRecord[0].compareTo(TimeStamps[whileLoop])==0)
+									
+									if(tempRecord[0].compareTo(TimeStamps[whileLoop])==0)
 									{
 										writerSum.append(tempRecord[1]	+	"");
 									}
