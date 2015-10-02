@@ -69,7 +69,12 @@ public class Inspiration {
 					
 					URL = Constants.BASE_URL + PARAMETER +"/?record=" + RECORD_ID ;
 					fileName = RECORD_ID +"_"+ PARAMETER +".csv" ;
-					
+					try {
+						Thread.sleep(700);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					startExecution(reco);
 				}
 			}
