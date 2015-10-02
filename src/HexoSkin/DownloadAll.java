@@ -24,7 +24,7 @@ import java.util.Timer;
 public class DownloadAll {
 	private static String[] reco;
 	
-	public static void main(String[] args) throws ParseException
+	public static void main(String[] args)
 	{
 		
 		DownloadAll all=new DownloadAll();
@@ -237,7 +237,7 @@ public class DownloadAll {
 
 	}
 	
-	private void gatherCsvTogether(String reco[]) throws IOException, ParseException
+	private void gatherCsvTogether(String reco[]) throws IOException
 	{
 		InputStream inputStream = null;
 		Properties propR = new Properties();
@@ -373,49 +373,34 @@ public class DownloadAll {
 								tempRecord=s[index].split(",");
 								SimpleDateFormat sfEnd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 								SimpleDateFormat sfStart = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy",java.util.Locale.ENGLISH) ;
-							
-								if((tempRecord[0].compareTo("TimeStamp")!=0)&&(TimeStamps[0].compareTo("TimeStamp")!=0))
-								{
-									Date dateFinal=sfStart.parse(tempRecord[0]);
-									Date dateInitial=sfStart.parse(TimeStamps[0]);
-									if(dateInitial.after(dateFinal))
-									{
-										System.out.println("data init: "+dateInitial.toString());
-										System.out.println("data final: "+dateFinal.toString());
-										index--;
-										continue;
-									}
+								try {
+										if((tempRecord[0].compareTo("TimeStamp")!=0)&&(TimeStamps[0].compareTo("TimeStamp")!=0))
+										{
+											Date dateFinal=sfStart.parse(tempRecord[0]);
+											Date dateInitial=sfStart.parse(TimeStamps[0]);
+											if(dateInitial.after(dateFinal))
+											{
+												index--;
+												continue;
+											}
+										}
+								} catch (ParseException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
 								}
+								
 								if(tempRecord[1].compareTo("Value")==0)
 								{
 									writerSum.append(PARAMETER[index]	+	"");
 								}
-								else if((tempRecord[0].compareTo("TimeStamp")!=0)&&(TimeStamps[0].compareTo("TimeStamp")!=0))
+								else if(tempRecord[0].compareTo(TimeStamps[whileLoop])==0)
 								{
-									SimpleDateFormat sfStart1 = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy",java.util.Locale.ENGLISH) ;
-									Date dateFinal=sfStart1.parse(tempRecord[0]);
-									Date dateInitial=sfStart1.parse(TimeStamps[whileLoop]);
-									
-									if(tempRecord[0].compareTo(TimeStamps[whileLoop])==0)
-									{
-										writerSum.append(tempRecord[1]	+	"");
-									}
-									else if(dateFinal.before(dateInitial))
-									{
-										while(!dateFinal.equals(dateInitial))
-										{
-											String[] tempRecord1=br[index].readLine().split(",");
-											dateInitial=sfStart1.parse(TimeStamps[whileLoop]);
-											dateFinal=sfStart1.parse(tempRecord1[0]);
-											System.out.println("data init: "+dateInitial.toString());
-											System.out.println("data final: "+dateFinal.toString());
-										}
-										writerSum.append(tempRecord[1]	+	"");
-									}
-									else{
-											writerSum.append(null);
-											br[index].reset();
-									}
+									writerSum.append(tempRecord[1]	+	"");
+								}
+							
+								else{
+										writerSum.append(null);
+										br[index].reset();
 								}
 								writerSum.append(',');
 								
