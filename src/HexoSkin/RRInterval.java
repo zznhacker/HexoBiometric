@@ -236,7 +236,7 @@ public class RRInterval {
 
 				Map<Long, ArrayList<Double>> sortedMap = new TreeMap<Long, ArrayList<Double>>(hashMap);
 				Iterator<Entry<Long, ArrayList<Double>>> mapIterator = sortedMap.entrySet().iterator();
-
+				int count=0;
 				while (mapIterator.hasNext()){
 
 					Entry<Long, ArrayList<Double>> mapEntry = mapIterator.next();
@@ -250,11 +250,12 @@ public class RRInterval {
 
 					Double value = sum / valueList.size();
 					Date date = new Date(key);
-					
+					if(count==0) continue;
 					writer.append(date + "");
 					writer.append(',');
 					writer.append((value) + "");
 					writer.append('\n');
+					count++;
 				}
 
 				writer.flush();

@@ -203,7 +203,7 @@ public class Inspiration {
 			writer.append('\n');
 
 			for (int i = 0; i< valueArray.size(); i++){
-
+				if(i==0) continue;
 				JSONArray eachValueArray = (JSONArray) valueArray.get(i);
 				Long timestamp = (Long) eachValueArray.get(0);
 				Long value = (Long) eachValueArray.get(1);
