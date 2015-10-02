@@ -70,7 +70,7 @@ public class DownloadAll {
 			e1.printStackTrace();
 		}
 		try {
-			Thread.sleep(125);
+			Thread.sleep(400);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -84,7 +84,7 @@ public class DownloadAll {
 			e1.printStackTrace();
 		}
 		try {
-			Thread.sleep(125);
+			Thread.sleep(400);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -98,7 +98,7 @@ public class DownloadAll {
 			e1.printStackTrace();
 		}
 		try {
-			Thread.sleep(125);
+			Thread.sleep(400);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -113,7 +113,7 @@ public class DownloadAll {
 			e1.printStackTrace();
 		}
 		try {
-			Thread.sleep(125);
+			Thread.sleep(400);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -128,7 +128,7 @@ public class DownloadAll {
 			e1.printStackTrace();
 		}
 		try {
-			Thread.sleep(125);
+			Thread.sleep(400);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -143,7 +143,7 @@ public class DownloadAll {
 			e1.printStackTrace();
 		}
 		try {
-			Thread.sleep(125);
+			Thread.sleep(400);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -159,7 +159,7 @@ public class DownloadAll {
 		}
 		
 		try {
-			Thread.sleep(125);
+			Thread.sleep(400);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -175,7 +175,7 @@ public class DownloadAll {
 		}
 		
 		try {
-			Thread.sleep(125);
+			Thread.sleep(400);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -191,7 +191,7 @@ public class DownloadAll {
 		}
 		
 		try {
-			Thread.sleep(125);
+			Thread.sleep(400);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -207,7 +207,7 @@ public class DownloadAll {
 		}
 		
 		try {
-			Thread.sleep(125);
+			Thread.sleep(400);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -222,7 +222,7 @@ public class DownloadAll {
 		}
 		
 		try {
-			Thread.sleep(125);
+			Thread.sleep(400);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
