@@ -24,7 +24,7 @@ import java.util.Timer;
 public class DownloadAll {
 	private static String[] reco;
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws ParseException
 	{
 		
 		DownloadAll all=new DownloadAll();
@@ -237,7 +237,7 @@ public class DownloadAll {
 
 	}
 	
-	private void gatherCsvTogether(String reco[]) throws IOException
+	private void gatherCsvTogether(String reco[]) throws IOException, ParseException
 	{
 		InputStream inputStream = null;
 		Properties propR = new Properties();
@@ -362,13 +362,10 @@ public class DownloadAll {
 					
 					writerSum.append(',');
 					
-					
-					
 					for(int index=1;index<PARAMETER.length;index++)
 					{
 						if(br[index]!=null)
 						{
-							
 						//System.out.println("The id is"+IdSet[i]); //This is used to check error
 							br[index].mark(100);
 							if((s[index]=br[index].readLine())!=null)
@@ -383,6 +380,8 @@ public class DownloadAll {
 											Date dateInitial=sfStart.parse(TimeStamps[0]);
 											if(dateInitial.after(dateFinal))
 											{
+												System.out.println("data init: "+dateInitial.toString());
+												System.out.println("data final: "+dateFinal.toString());
 												index--;
 												continue;
 											}
@@ -391,7 +390,9 @@ public class DownloadAll {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
-								
+								SimpleDateFormat sfStart1 = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy",java.util.Locale.ENGLISH) ;
+								Date dateFinal=sfStart1.parse(tempRecord[0]);
+								Date dateInitial=sfStart1.parse(TimeStamps[whileLoop]);
 								if(tempRecord[1].compareTo("Value")==0)
 								{
 									writerSum.append(PARAMETER[index]	+	"");
@@ -400,7 +401,18 @@ public class DownloadAll {
 								{
 									writerSum.append(tempRecord[1]	+	"");
 								}
-							
+								else if(dateFinal.before(dateInitial))
+								{
+									while(!dateFinal.equals(dateInitial))
+									{
+										String[] tempRecord1=br[index].readLine().split(",");
+										dateInitial=sfStart1.parse(TimeStamps[whileLoop]);
+										dateFinal=sfStart1.parse(tempRecord1[0]);
+										System.out.println("data init: "+dateInitial.toString());
+										System.out.println("data final: "+dateFinal.toString());
+									}
+									writerSum.append(tempRecord[1]	+	"");
+								}
 								else{
 										writerSum.append(null);
 										br[index].reset();
