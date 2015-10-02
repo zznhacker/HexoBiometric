@@ -214,7 +214,7 @@ public class RRInterval {
 				HashMap<Long, ArrayList<Double>> hashMap = new HashMap<>();
 
 				for (int i = 0; i< valueArray.size(); i++){
-
+					if(i==0) continue;
 					JSONArray eachValueArray = (JSONArray) valueArray.get(i);
 					Long timestamp = (Long) eachValueArray.get(0);
 					Double value = (Double) eachValueArray.get(1);
@@ -250,12 +250,12 @@ public class RRInterval {
 
 					Double value = sum / valueList.size();
 					Date date = new Date(key);
-					if(count==0) continue;
+//					if(count==0) continue;
 					writer.append(date + "");
 					writer.append(',');
 					writer.append((value) + "");
 					writer.append('\n');
-					count++;
+//					count++;
 				}
 
 				writer.flush();
