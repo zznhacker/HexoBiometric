@@ -248,7 +248,7 @@ public class DownloadAll {
 			//System.out.println(propS.setProperty("recordId", setPropId));
 			FileOutputStream fos = new FileOutputStream("DataSet.properties"); 
 			propSData.setProperty("recordId", "");
-			propSData.setProperty("count","100");
+			propSData.setProperty("count","100000");
 			propSData.store(fos, "Copyright (c) Boxcode Studio"); 
 			fos.close();//closing outputstream
 		}

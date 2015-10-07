@@ -174,7 +174,7 @@ public class ReadId {
 			propSconfig.setProperty("password", reco[1]);
 			propSconfig.setProperty("directory", "Data_Download/");
 			propSconfig.setProperty("recordId", setIdIntoConfig);
-			propSconfig.setProperty("count", "100");
+			propSconfig.setProperty("count", "100000");
 			propSconfig.store(fos1, "Copyright (c) Boxcode Studio"); 
 			fos1.close();//closing outputstream
 		
