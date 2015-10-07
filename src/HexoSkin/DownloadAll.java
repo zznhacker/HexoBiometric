@@ -26,7 +26,8 @@ public class DownloadAll {
 	
 	public static void main(String[] args)
 	{
-		
+		long tStart = System.currentTimeMillis();
+
 		DownloadAll all=new DownloadAll();
 		synchronized (DownloadAll.class) {
 			if(reco==null)
@@ -227,13 +228,22 @@ public class DownloadAll {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
-		
+		long GaStart = System.currentTimeMillis();
+
 		try {
 			all.gatherCsvTogether(reco);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		long tEnd = System.currentTimeMillis();
+		long tDelta = tEnd - tStart;
+		long gDelta= tEnd - GaStart;
+		double elapsedSeconds = tDelta / 1000.0;
+		double gatherTime=gDelta / 1000.0;
+		System.out.println("The total running time is: "+elapsedSeconds);
+		System.out.println("The total combining files' time is: "+gatherTime);
+		
 
 	}
 	
